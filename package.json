@@ -1,0 +1,14 @@
+{
+  "name": "value-axes",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "develop": "browser-sync"
+  },
+  "author": "Mateusz Karłowski",
+  "license": "GNU General Public License v3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mati2251/Value-Axes"
+  }
+}

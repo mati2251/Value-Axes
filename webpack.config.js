@@ -2,14 +2,33 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-	entry: './src/',
+	entry: {
+		index: './src/index.ts',
+		'create/create': './src/create/Create.ts'
+	},
+	mode: "development",
 	module: {
 		rules: [
 			{
-				test: [/\.tsx?$/, /\.s[ac]ss$/i],
-				use: ['ts-loader', 'sass-loader'],
-				exclude: /node_modules/,
+				test: /\.tsx?$/,
+				use: ['ts-loader'],
 			},
+			{
+				test: /\.s[ac]ss$/i,
+				use: [
+					'style-loader',
+					'css-loader',
+					'sass-loader',
+				],
+			},
+			{
+				loader: 'babel-loader',
+				options: {
+					presets: [
+						'babel-preset-env'
+					]
+				}
+			}
 		],
 	},
 	resolve: {
@@ -17,18 +36,22 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].js',
-		path: path.resolve(__dirname, 'public'),
+		sourceMapFilename: '[name].js.map',
+		path: path.resolve(__dirname, `public/`),
+	},
+	devServer: {
+		contentBase: path.join(__dirname, 'public'),
+		compress: true,
+		port: 9000
 	},
 	plugins: [
 		new CopyPlugin({
-				patterns: [
-					{
-						from: 'src/**/*.html',
-						to: "",
-						context: "public/"
-					}
-				]
-			}
-		)
-	]
+			patterns: [
+				{
+					context: './src',
+					from: '**/*.html',
+				},
+			],
+		})
+	],
 };

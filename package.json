@@ -3,20 +3,29 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "develop": "browser-sync",
     "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --open",
+    "watch": "webpack --watch",
     "clean": "rm -rf public"
   },
   "dependencies": {
     "webpack": "^4.43.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^6.0.1",
+    "css-loader": "^3.5.3",
+    "html-loader": "^1.1.0",
     "node-sass": "^4.14.1",
+    "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
     "ts-loader": "^7.0.4",
     "typescript": "^3.9.2",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   },
   "author": "Mateusz Karłowski",
   "license": "GNU General Public License v3.0",

@@ -41,6 +41,10 @@ module.exports = {
 				{
 					context: './src',
 					from: '**/*.png'
+				},
+				{
+					context: './src',
+					from: '**/*.svg'
 				}
 			],
 		})

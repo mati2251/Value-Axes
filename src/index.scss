@@ -3,19 +3,19 @@
   flex-direction: row;
 }
 
-.example{
+.example {
   width: 500px;
   height: 380px;
 }
 
-.logo{
+.logo {
   width: 300px;
   height: auto;
   align-self: center;
   margin-bottom: 30px;
 }
 
-.container__text{
+.container__text {
   display: flex;
   flex-direction: column;
   margin: 0 60px 0 60px;
@@ -23,7 +23,7 @@
   height: 380px;
 }
 
-.github{
+.github {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,15 +31,130 @@
   cursor: pointer;
 }
 
-.github img{
+.github img {
   width: 60px;
   height: 60px;
   padding-right: 10px;
 }
 
 @media (max-width: 1650px) {
-  .example{
+  .example {
     width: 400px;
     height: 300px;
+  }
+
+  .container__text {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .container__text {
+    margin: 0 30px 0 30px;
+  }
+}
+
+@media (max-width: 1330px) {
+  .example {
+    width: 300px;
+    height: 200px;
+  }
+
+  .container__text {
+    width: 300px;
+    height: 200px;
+  }
+
+  .logo {
+    margin-bottom: 5px;
+    width: 150px;
+  }
+
+  .github img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .example {
+    width: 250px;
+    height: 166px;
+  }
+
+  .container__text {
+    width: 250px;
+    height: 166px;
+  }
+}
+
+@media (max-width: 870px) {
+  .example{
+    width: 200px;
+    height: 133px;
+  }
+
+  .container__text{
+    width: 200px;
+    height: 133px;
+  }
+
+  .github img{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 730px) {
+  .example{
+    width: 175px;
+    height: 116px;
+  }
+
+  .container__text{
+    width: 175px;
+    height: 116px;
+  }
+
+  .container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .example {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+
+  .container__text {
+    width: 400px;
+    height: 150px;
+  }
+
+  .example:nth-child(1){
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .container__text {
+    width: 300px;
+    height: 150px;
+    margin: 0 10px 0 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .example {
+    width: 200px;
+    height: 122px;
+    margin-bottom: 10px;
+  }
+
+  .container__text {
+    width: 200px;
+    height: 200px;
   }
 }

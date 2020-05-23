@@ -22,8 +22,8 @@ h3 {
 a {
   all: unset;
   color: #008DFF;
-  border-bottom: #008DFF 4px solid;
-  padding-bottom: 2px;
+  border-bottom: #008DFF 2px solid;
+  padding-bottom: 1px;
 }
 
 .button{
@@ -60,5 +60,79 @@ footer{
 
   h3{
     font-size: 20px;
+  }
+}
+
+@media (max-width: 1330px) {
+  h2{
+    font-size: 15px;
+  }
+
+  h3{
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1040px) {
+  h2{
+    font-size: 12px;
+  }
+
+  h3{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 870px) {
+  h2{
+    font-size: 10px;
+  }
+
+  h3{
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 730px) {
+  h2{
+    font-size: 8px;
+  }
+
+  h3{
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 650px) {
+  h2{
+    font-size: 12px;
+  }
+
+  h3{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 730px) {
+  body{
+    margin: 10px;
+  }
+
+  footer h2{
+    font-size: 8px;
+  }
+
+  footer h3{
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  footer h2{
+    font-size: 6px;
+  }
+
+  footer h3{
+    font-size: 6px;
   }
 }

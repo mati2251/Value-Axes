@@ -36,3 +36,10 @@
   height: 60px;
   padding-right: 10px;
 }
+
+@media (max-width: 1650px) {
+  .example{
+    width: 400px;
+    height: 300px;
+  }
+}

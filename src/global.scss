@@ -19,10 +19,11 @@ h3 {
   margin: 0;
 }
 
-a{
+a {
   all: unset;
   color: #008DFF;
-  border-bottom: #008DFF 5px solid;
+  border-bottom: #008DFF 4px solid;
+  padding-bottom: 2px;
 }
 
 .button{
@@ -41,4 +42,23 @@ a{
 .button:hover{
   background-color: #73bf3f;
   transition: 0.3s all ease;
+}
+
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 1650px) {
+  h2{
+    font-size: 20px;
+  }
+
+  h3{
+    font-size: 20px;
+  }
 }

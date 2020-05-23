@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server --open",
+    "start": "browser-sync public",
     "watch": "webpack --watch",
     "clean": "rm -rf public"
   },

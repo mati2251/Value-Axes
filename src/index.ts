@@ -1,1 +1,1 @@
-console.log("wow")
+import './index.scss'

@@ -21,14 +21,6 @@ module.exports = {
 					'sass-loader',
 				],
 			},
-			{
-				loader: 'babel-loader',
-				options: {
-					presets: [
-						'babel-preset-env'
-					]
-				}
-			}
 		],
 	},
 	resolve: {
@@ -39,11 +31,6 @@ module.exports = {
 		sourceMapFilename: '[name].js.map',
 		path: path.resolve(__dirname, `public/`),
 	},
-	devServer: {
-		contentBase: path.join(__dirname, 'public'),
-		compress: true,
-		port: 9000
-	},
 	plugins: [
 		new CopyPlugin({
 			patterns: [
@@ -51,6 +38,10 @@ module.exports = {
 					context: './src',
 					from: '**/*.html',
 				},
+				{
+					context: './src',
+					from: '**/*.png'
+				}
 			],
 		})
 	],

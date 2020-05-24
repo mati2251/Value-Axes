@@ -23,20 +23,6 @@
   height: 380px;
 }
 
-.github {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-self: flex-start;
-  cursor: pointer;
-}
-
-.github img {
-  width: 60px;
-  height: 60px;
-  padding-right: 10px;
-}
-
 @media (max-width: 1650px) {
   .example {
     width: 400px;
@@ -70,11 +56,6 @@
     margin-bottom: 5px;
     width: 150px;
   }
-
-  .github img {
-    width: 30px;
-    height: 30px;
-  }
 }
 
 @media (max-width: 1040px) {
@@ -99,11 +80,13 @@
     width: 200px;
     height: 133px;
   }
+}
 
-  .github img{
-    width: 20px;
-    height: 20px;
-  }
+body{
+  margin: 40px 40px 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width: 730px) {

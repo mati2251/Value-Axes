@@ -22,7 +22,7 @@ a {
   padding-bottom: 1px;
 }
 
-.button{
+.button {
   all: unset;
   padding: 5px 10px 5px 10px;
   background-color: #85D64E;
@@ -35,7 +35,7 @@ a {
   transition: 0.3s all ease;
 }
 
-.button:hover{
+.button:hover {
   background-color: #73bf3f;
   transition: 0.3s all ease;
 }
@@ -54,7 +54,7 @@ a {
   padding-right: 10px;
 }
 
-footer{
+footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -64,21 +64,21 @@ footer{
 }
 
 @media (max-width: 1650px) {
-  h2{
+  h2 {
     font-size: 20px;
   }
 
-  h3{
+  h3 {
     font-size: 20px;
   }
 }
 
 @media (max-width: 1330px) {
-  h2{
+  h2 {
     font-size: 15px;
   }
 
-  h3{
+  h3 {
     font-size: 15px;
   }
 
@@ -89,70 +89,70 @@ footer{
 }
 
 @media (max-width: 1040px) {
-  h2{
+  h2 {
     font-size: 12px;
   }
 
-  h3{
+  h3 {
     font-size: 12px;
   }
 }
 
 @media (max-width: 870px) {
-  h2{
+  h2 {
     font-size: 10px;
   }
 
-  h3{
+  h3 {
     font-size: 10px;
   }
 
-  .github img{
+  .github img {
     width: 20px;
     height: 20px;
   }
 }
 
 @media (max-width: 730px) {
-  h2{
-    font-size: 8px;
+  h2 {
+    font-size: 14px;
   }
 
-  h3{
-    font-size: 8px;
+  h3 {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 650px) {
-  h2{
+  h2 {
     font-size: 12px;
   }
 
-  h3{
+  h3 {
     font-size: 12px;
   }
 }
 
 @media (max-width: 730px) {
-  body{
+  body {
     margin: 10px;
   }
 
-  footer h2{
+  footer h2 {
     font-size: 8px;
   }
 
-  footer h3{
+  footer h3 {
     font-size: 8px;
   }
 }
 
 @media (max-width: 360px) {
-  footer h2{
+  footer h2 {
     font-size: 6px;
   }
 
-  footer h3{
+  footer h3 {
     font-size: 6px;
   }
 }

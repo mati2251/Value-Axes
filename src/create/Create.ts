@@ -1,4 +1,4 @@
-import '../global.scss'
+import '../styles/global.scss'
 import './create.scss'
 
 const canvas: HTMLCanvasElement = document.getElementById("canvas") as HTMLCanvasElement;

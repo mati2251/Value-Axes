@@ -1,13 +1,13 @@
-import Axes from './Axes'
+import './Axes'
 
-class Chart{
-    axesX : Axes;
-    axesY : Axes;
-    quartersValues :QuartersValues
+class Chart {
+    axesX: Axes;
+    axesY: Axes;
+    quartersValues: QuartersValues
 
-    constructor(axesX: Axes, axesY: Axes, quartersValues :QuartersValues) {
-        this.axesX = axesX;
-        this.axesY = axesY;
+    constructor(extremesX: Extremes, nameX: string, extremesY: Extremes, nameY: string, quartersValues: QuartersValues) {
+        this.axesX = new Axes(AxisType.x, extremesX, nameX);
+        this.axesY = new Axes(AxisType.y, extremesY, nameY)
         this.quartersValues = quartersValues
     }
 
@@ -19,3 +19,5 @@ interface QuartersValues {
     third: string,
     fourth: string
 }
+
+export default Chart;

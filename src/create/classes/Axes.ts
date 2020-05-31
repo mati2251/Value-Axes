@@ -11,14 +11,15 @@ class Axes {
 
 interface Extremes {
     left: string,
-    leftPhoto: string,
     right: string
-    rightPhoto: string
+}
+
+interface ExtremesPhoto {
+    left: string,
+    right: string
 }
 
 enum AxisType {
     x,
     y
 }
-
-export default Axes;

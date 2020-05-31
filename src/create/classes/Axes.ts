@@ -23,3 +23,5 @@ enum AxisType {
     x,
     y
 }
+
+export {Extremes, ExtremesPhoto, AxisType, Axes};

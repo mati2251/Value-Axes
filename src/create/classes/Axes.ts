@@ -16,6 +16,7 @@ class Axes {
 
     draw = () => {
         this.drawAxes()
+        this.drawTitle()
     }
 
     drawAxes = () => {
@@ -24,26 +25,43 @@ class Axes {
         this.ctx.style = this.color
         this.ctx.lineWidth = 8
         if (this.type === AxisType.x) {
-            this.ctx.moveTo(70, this.canvas.height / 2 + 8)
-            this.ctx.lineTo(this.canvas.width - 70, this.canvas.height / 2 + 8)
+            this.ctx.moveTo(110, this.canvas.height / 2 + 8)
+            this.ctx.lineTo(this.canvas.width - 110, this.canvas.height / 2 + 8)
             this.ctx.stroke()
             this.ctx.closePath()
             this.ctx.beginPath()
-            this.ctx.moveTo(this.canvas.width - 70, this.canvas.height / 2)
-            this.ctx.lineTo(this.canvas.width - 70, this.canvas.height / 2 + 16)
-            this.ctx.lineTo(this.canvas.width - 55, this.canvas.height / 2 + 8)
+            this.ctx.moveTo(this.canvas.width - 110, this.canvas.height / 2)
+            this.ctx.lineTo(this.canvas.width - 110, this.canvas.height / 2 + 16)
+            this.ctx.lineTo(this.canvas.width - 95, this.canvas.height / 2 + 8)
             this.ctx.fill()
         } else if (this.type === AxisType.y) {
-            this.ctx.moveTo(this.canvas.width / 2 + 8, 70)
-            this.ctx.lineTo(this.canvas.width / 2 + 8, this.canvas.height - 70)
+            this.ctx.moveTo(this.canvas.width / 2 + 8, 110)
+            this.ctx.lineTo(this.canvas.width / 2 + 8, this.canvas.height - 110)
             this.ctx.stroke()
             this.ctx.closePath()
             this.ctx.beginPath()
-            this.ctx.moveTo(this.canvas.width / 2, 70)
-            this.ctx.lineTo(this.canvas.width / 2 + 16, 70)
-            this.ctx.lineTo(this.canvas.width / 2 + 8, 55)
+            this.ctx.moveTo(this.canvas.width / 2, 110)
+            this.ctx.lineTo(this.canvas.width / 2 + 16, 110)
+            this.ctx.lineTo(this.canvas.width / 2 + 8, 95)
             this.ctx.fill()
         }
+        this.ctx.closePath()
+    }
+
+    drawTitle = () => {
+        this.ctx.beginPath()
+        this.ctx.font = "26px Viga";
+        this.ctx.textAlign = "center";
+        if (this.type === AxisType.x) {
+            this.ctx.fillText(this.name.toUpperCase(), 210, this.canvas.height / 2 - 2);
+        } else if (this.type === AxisType.y) {
+            this.ctx.save();
+            this.ctx.translate(this.canvas.width / 2 + 16, this.canvas.height - 210);
+            this.ctx.rotate(Math.PI / 2);
+            this.ctx.fillText(this.name.toUpperCase(), 0, 0);
+            this.ctx.restore();
+        }
+        this.ctx.closePath()
     }
 }
 

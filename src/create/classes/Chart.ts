@@ -2,14 +2,7 @@ import './Axes'
 import {Axes, AxisType, Extremes} from "./Axes";
 
 class Chart {
-    private _name: string
-    set name(value: string){
-        this._name = value;
-        this.drawTitle();
-    }
-    get name(): string{
-        return this._name
-    }
+    name: string
     axesX: Axes;
     axesY: Axes;
     quartersValues: QuartersValues;
@@ -17,7 +10,7 @@ class Chart {
     ctx: any
 
     constructor(name: string, extremesX: Extremes, nameX: string, extremesY: Extremes, nameY: string, quartersValues: QuartersValues, canvas: HTMLCanvasElement) {
-        this._name = name
+        this.name = name
         this.canvas = canvas
         this.ctx = this.canvas.getContext('2d')
         this.axesX = new Axes(AxisType.x, extremesX, nameX, canvas, this.ctx);
@@ -39,7 +32,7 @@ class Chart {
     drawTitle = () => {
         this.ctx.font = "40px Viga";
         this.ctx.textAlign = "center";
-        this.ctx.fillText(this._name.toUpperCase(), this.canvas.width/2, 40);
+        this.ctx.fillText(this.name.toUpperCase(), this.canvas.width/2, 40);
     }
 
 

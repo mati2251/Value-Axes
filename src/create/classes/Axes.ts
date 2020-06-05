@@ -24,16 +24,25 @@ class Axes {
         this.ctx.style = this.color
         this.ctx.lineWidth = 8
         if (this.type === AxisType.x) {
-            this.ctx.moveTo(5, this.canvas.height / 2 + 20)
-            this.ctx.lineTo(this.canvas.width-20, this.canvas.height / 2 + 20)
+            this.ctx.moveTo(70, this.canvas.height / 2 + 8)
+            this.ctx.lineTo(this.canvas.width - 70, this.canvas.height / 2 + 8)
             this.ctx.stroke()
             this.ctx.closePath()
             this.ctx.beginPath()
-            this.ctx.moveTo(this.canvas.width-20, this.canvas.height / 2 + 10)
-            this.ctx.lineTo(this.canvas.width-20, this.canvas.height / 2 + 30)
-            this.ctx.lineTo(this.canvas.width-5, this.canvas.height / 2 + 20)
+            this.ctx.moveTo(this.canvas.width - 70, this.canvas.height / 2)
+            this.ctx.lineTo(this.canvas.width - 70, this.canvas.height / 2 + 16)
+            this.ctx.lineTo(this.canvas.width - 55, this.canvas.height / 2 + 8)
             this.ctx.fill()
         } else if (this.type === AxisType.y) {
+            this.ctx.moveTo(this.canvas.width / 2 + 8, 70)
+            this.ctx.lineTo(this.canvas.width / 2 + 8, this.canvas.height - 70)
+            this.ctx.stroke()
+            this.ctx.closePath()
+            this.ctx.beginPath()
+            this.ctx.moveTo(this.canvas.width / 2, 70)
+            this.ctx.lineTo(this.canvas.width / 2 + 16, 70)
+            this.ctx.lineTo(this.canvas.width / 2 + 8, 55)
+            this.ctx.fill()
         }
     }
 }

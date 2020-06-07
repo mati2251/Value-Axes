@@ -63,14 +63,11 @@ class Axes {
         }
         this.ctx.closePath()
     }
+
+
 }
 
 interface Extremes {
-    left: string,
-    right: string
-}
-
-interface ExtremesPhoto {
     left: string,
     right: string
 }
@@ -80,4 +77,4 @@ enum AxisType {
     y
 }
 
-export {Extremes, ExtremesPhoto, AxisType, Axes};
+export {Extremes, AxisType, Axes};

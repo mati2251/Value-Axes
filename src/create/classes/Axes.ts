@@ -17,6 +17,7 @@ class Axes {
     draw = () => {
         this.drawAxes()
         this.drawTitle()
+        this.drawExtremesLabel()
     }
 
     drawAxes = () => {
@@ -64,6 +65,27 @@ class Axes {
         this.ctx.closePath()
     }
 
+    drawExtremesLabel = () => {
+        if (this.type === AxisType.x) {
+            this.ctx.font = "30px Viga"
+            this.ctx.textAlign = "center"
+            this.ctx.save();
+            this.ctx.translate(this.canvas.width - 90, this.canvas.height / 2 + 8);
+            this.ctx.rotate(Math.PI / 2);
+            this.ctx.fillText(this.extremes.right.toUpperCase(), 0, 0)
+            this.ctx.restore();
+            this.ctx.save();
+            this.ctx.translate(90, this.canvas.height / 2 + 8);
+            this.ctx.rotate(-Math.PI / 2);
+            this.ctx.fillText(this.extremes.left.toUpperCase(), 0, 0)
+            this.ctx.restore();
+        } else if (this.type === AxisType.y) {
+            this.ctx.font = "30px Viga"
+            this.ctx.textAlign = "center"
+            this.ctx.fillText(this.extremes.right.toUpperCase(), this.canvas.width / 2 + 8, 90)
+            this.ctx.fillText(this.extremes.left.toUpperCase(), this.canvas.width / 2 + 8, this.canvas.height - 70)
+        }
+    }
 
 }
 

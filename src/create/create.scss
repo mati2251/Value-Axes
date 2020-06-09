@@ -31,7 +31,6 @@ body{
 
 h5 {
   text-transform: uppercase;
-  font-size: 15px;
   padding: 0 15px 0 15px;
   margin: 0;
   color: #8F8F8F;
@@ -41,4 +40,8 @@ canvas{
   margin-top: 50px;
   width: 40vw;
   height: 40vw;
+}
+
+.settingsDetails{
+  margin: 10px 20px 10px 20px;
 }

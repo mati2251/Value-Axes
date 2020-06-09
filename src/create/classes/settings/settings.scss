@@ -1,0 +1,28 @@
+.settingsIcon{
+  background-color: #75db34;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  border-radius: 100px;
+  margin-right: 20px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.settingsIcon:hover{
+  background-color: #71cd39;
+}
+
+.settingsRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.settingsRow h4{
+  margin-bottom: 10px;
+}

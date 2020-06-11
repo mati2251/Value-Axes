@@ -8,6 +8,7 @@ class Settings {
 
     constructor(chart: Chart) {
         window.axesSetting = this.axesSettings;
+        window.quarterSettings = this.quarterSettings;
         this.chart = chart;
         this.displayAxesSettings();
         this.displayAxesQuarters()
@@ -15,6 +16,9 @@ class Settings {
 
     axesSettings = (axisType :AxisType) => {
         console.log(axisType)
+    }
+
+    quarterSettings = (type: number) => {
     }
 
     displayAxesSettings = () => {
@@ -38,23 +42,23 @@ class Settings {
         this.settings.innerHTML +=
             `<h3>QUARTES:</h3>
             <div class="settingsRow">
-                <button onclick="axesSetting(AxisType.x)">
+                <button onclick="quarterSettings(0)">
                     <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.quartersLabel.first.toUpperCase()}</h4>
             </div><div class="settingsRow">
-                <button onclick="axesSetting(AxisType.y)">
+                <button onclick="quarterSettings(1)">
                     <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.quartersLabel.second.toUpperCase()}</h4>
             </div>
             <div class="settingsRow">
-                <button onclick="axesSetting(AxisType.x)">
+                <button onclick="quarterSettings(2)">
                     <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.quartersLabel.third.toUpperCase()}</h4>
             </div><div class="settingsRow">
-                <button onclick="axesSetting(AxisType.y)">
+                <button onclick="quarterSettings(3)">
                     <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.quartersLabel.fourth.toUpperCase()}</h4>

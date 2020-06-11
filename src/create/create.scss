@@ -20,7 +20,8 @@ body{
 
 .settings{
   width: 25vw;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
   background-color: #F6F6F6;
   border-left: 2px solid #707070;
 }

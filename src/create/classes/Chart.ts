@@ -1,5 +1,6 @@
 import './Axes'
 import {Axes, AxisType, Extremes} from "./Axes"
+import {Quarter, QuarterType} from "./Quarter";
 
 class Chart {
     name: string
@@ -8,7 +9,7 @@ class Chart {
     quartersLabel: QuartersValues
     canvas: HTMLCanvasElement
     ctx: any
-    quartersColor : QuartersValues = {first: '#97FFFF', second: '#97FFBD', third: "#F5FF97", fourth: '#FF9797'}
+    quarters : Array<Quarter> = []
 
     constructor(name: string, extremesX: Extremes, nameX: string, extremesY: Extremes, nameY: string, quartersValues: QuartersValues, canvas: HTMLCanvasElement) {
         this.name = name
@@ -17,13 +18,15 @@ class Chart {
         this.axesX = new Axes(AxisType.x, extremesX, nameX, canvas, this.ctx)
         this.axesY = new Axes(AxisType.y, extremesY, nameY, canvas, this.ctx)
         this.quartersLabel = quartersValues
+        this.quarters[0] = new Quarter(QuarterType.first, quartersValues.first, '#97FFFF', canvas, this.ctx)
+        this.quarters[1] = new Quarter(QuarterType.second, quartersValues.second, '#97FFBD', canvas, this.ctx)
+        this.quarters[2] = new Quarter(QuarterType.third, quartersValues.third, '#F5FF97', canvas, this.ctx)
+        this.quarters[3] = new Quarter(QuarterType.fourth, quartersValues.fourth, '#FF9797', canvas, this.ctx)
         this.draw()
     }
 
     draw = () => {
         this.drawTitle()
-        this.drawQuartersColor()
-        this.drawQuartersLabels()
         this.axesX.draw()
         this.axesY.draw()
     }
@@ -36,28 +39,6 @@ class Chart {
         this.ctx.font = "40px Viga"
         this.ctx.textAlign = "center"
         this.ctx.fillText(this.name.toUpperCase(), this.canvas.width/2, 40)
-    }
-
-    drawQuartersColor = () => {
-        this.ctx.beginPath()
-        this.ctx.fillStyle = this.quartersColor.second
-        this.ctx.fillRect(110, 100, this.canvas.width/2 - 100, this.canvas.height/2 - 90)
-        this.ctx.fillStyle = this.quartersColor.first
-        this.ctx.fillRect(this.canvas.width/2 + 10, 100, this.canvas.width/2 - 110, this.canvas.height/2 - 90)
-        this.ctx.fillStyle = this.quartersColor.third
-        this.ctx.fillRect(110, this.canvas.height/2 + 10, this.canvas.width/2 - 100, this.canvas.height/2 - 120)
-        this.ctx.fillStyle = this.quartersColor.fourth
-        this.ctx.fillRect(this.canvas.width/2 + 10, this.canvas.height/2 + 10, this.canvas.width/2 - 110, this.canvas.height/2 - 120)
-        this.ctx.fillStyle = "#000000"
-    }
-
-    drawQuartersLabels = () => {
-        this.ctx.font = "30px Viga"
-        this.ctx.textAlign = "center"
-        this.ctx.fillText(this.quartersLabel.second.toUpperCase(),   300, 300)
-        this.ctx.fillText(this.quartersLabel.first.toUpperCase(),   700, 300)
-        this.ctx.fillText(this.quartersLabel.third.toUpperCase(),   300, 700)
-        this.ctx.fillText(this.quartersLabel.fourth.toUpperCase(),   700, 700)
     }
 
 }

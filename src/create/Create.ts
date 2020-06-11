@@ -14,6 +14,7 @@ window.AxisType = AxisType
 declare global {
     interface Window {
         axesSetting: any,
-        AxisType: any
+        AxisType: any,
+        quarterSettings: any
     }
 }

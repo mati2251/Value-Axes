@@ -1,5 +1,5 @@
 import './settings.scss'
-import {Chart} from "../Chart";
+import {Chart, QuartersValues} from "../Chart";
 import {AxisType} from "../Axes";
 
 class Settings {
@@ -10,6 +10,7 @@ class Settings {
         window.axesSetting = this.axesSettings;
         this.chart = chart;
         this.displayAxesSettings();
+        this.displayAxesQuarters()
     }
 
     axesSettings = (axisType :AxisType) => {
@@ -17,7 +18,7 @@ class Settings {
     }
 
     displayAxesSettings = () => {
-        this.settings.innerHTML =
+        this.settings.innerHTML +=
             `<h3>AXES:</h3>
             <div class="settingsRow">
                 <button onclick="axesSetting(AxisType.x)">
@@ -29,6 +30,34 @@ class Settings {
                     <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.axesY.name.toUpperCase()}</h4>
+            </div>
+            `
+    }
+
+    displayAxesQuarters = () => {
+        this.settings.innerHTML +=
+            `<h3>QUARTES:</h3>
+            <div class="settingsRow">
+                <button onclick="axesSetting(AxisType.x)">
+                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                </button>
+                <h4>${this.chart.quartersLabel.first.toUpperCase()}</h4>
+            </div><div class="settingsRow">
+                <button onclick="axesSetting(AxisType.y)">
+                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                </button>
+                <h4>${this.chart.quartersLabel.second.toUpperCase()}</h4>
+            </div>
+            <div class="settingsRow">
+                <button onclick="axesSetting(AxisType.x)">
+                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                </button>
+                <h4>${this.chart.quartersLabel.third.toUpperCase()}</h4>
+            </div><div class="settingsRow">
+                <button onclick="axesSetting(AxisType.y)">
+                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                </button>
+                <h4>${this.chart.quartersLabel.fourth.toUpperCase()}</h4>
             </div>
             `
     }

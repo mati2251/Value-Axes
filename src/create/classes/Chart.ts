@@ -1,15 +1,16 @@
 import './Axes'
 import {Axes, AxisType, Extremes} from "./Axes"
 import {Quarter, QuarterType} from "./Quarter";
+import {Example} from './Example'
 
 class Chart {
     name: string
     axesX: Axes
     axesY: Axes
-    quartersLabel: QuartersValues
     canvas: HTMLCanvasElement
     ctx: any
     quarters : Array<Quarter> = []
+    examples : Array<Example> = []
 
     constructor(name: string, extremesX: Extremes, nameX: string, extremesY: Extremes, nameY: string, quartersValues: QuartersValues, canvas: HTMLCanvasElement) {
         this.name = name
@@ -17,7 +18,6 @@ class Chart {
         this.ctx = this.canvas.getContext('2d')
         this.axesX = new Axes(AxisType.x, extremesX, nameX, canvas, this.ctx)
         this.axesY = new Axes(AxisType.y, extremesY, nameY, canvas, this.ctx)
-        this.quartersLabel = quartersValues
         this.quarters[0] = new Quarter(QuarterType.first, quartersValues.first, '#97FFFF', canvas, this.ctx)
         this.quarters[1] = new Quarter(QuarterType.second, quartersValues.second, '#97FFBD', canvas, this.ctx)
         this.quarters[2] = new Quarter(QuarterType.third, quartersValues.third, '#F5FF97', canvas, this.ctx)
@@ -25,8 +25,14 @@ class Chart {
         this.draw()
     }
 
+    addExample = () =>{
+        this.examples.push(new Example(20,20,'Example', '#000000', this.ctx))
+    }
+
     draw = () => {
         this.drawTitle()
+        this.quarters.forEach((item) => item.draw())
+        this.examples.forEach((item) => item.draw())
         this.axesX.draw()
         this.axesY.draw()
     }

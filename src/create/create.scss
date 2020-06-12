@@ -68,7 +68,20 @@ canvas {
 
 .generateMenu .menu {
   width: 600px;
-  height: 600px;
-  background-color: #d2cfcf;
+  height: 680px;
+  background-color: #ffffff;
   border-radius: 30px;
+}
+
+.generateMenu img{
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 600px;
+  height: 600px;
+}
+
+.buttonContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }

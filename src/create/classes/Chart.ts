@@ -30,11 +30,14 @@ class Chart {
     }
 
     draw = () => {
+        this.ctx.fillStyle = "white";
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.drawTitle()
         this.quarters.forEach((item) => item.draw())
         this.examples.forEach((item) => item.draw())
         this.axesX.draw()
         this.axesY.draw()
+        this.drawLogo()
     }
 
     clean = () => {
@@ -45,6 +48,14 @@ class Chart {
         this.ctx.font = "40px Viga"
         this.ctx.textAlign = "center"
         this.ctx.fillText(this.name.toUpperCase(), this.canvas.width/2, 40)
+    }
+
+    drawLogo = () => {
+        const image = new Image();
+        image.src = '../../resources/axis.png'
+        image.onload = () => {
+            this.ctx.drawImage(image, 800, 900, 153, 39)
+        }
     }
 
 }

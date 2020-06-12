@@ -20,6 +20,9 @@ window.AxisType = AxisType
 
 const generate = () => {
     const img = canvas.toDataURL("image/png");
+    document.getElementById('imgContainer').innerHTML = `
+    <img src="${img}" alt="Value Axes"/>
+    `
     displayGenerateMenu()
 }
 
@@ -30,6 +33,14 @@ const displayGenerateMenu = () => {
 const hiddenGenerateMenu = () => {
     menu.style = 'display: none'
 }
+
+const downloadChart = () => {
+    const link = document.getElementById('download');
+    link.setAttribute('download', 'ValueAxes.png');
+    link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+}
+
+downloadChart()
 
 window.generate = generate
 window.hiddenGenerateMenu = hiddenGenerateMenu

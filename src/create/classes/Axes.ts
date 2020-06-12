@@ -52,9 +52,15 @@ class Axes {
     drawTitle = () => {
         this.ctx.beginPath()
         this.ctx.font = "26px Viga";
-        this.ctx.textAlign = "center";
+        if(this.name.length>32){
+            this.ctx.font = "16px Viga"
+        }
+        else if(this.name.length>25){
+            this.ctx.font = "20px Viga"
+        }
+        this.ctx.textAlign = "start";
         if (this.type === AxisType.x) {
-            this.ctx.fillText(this.name.toUpperCase(), 210, this.canvas.height / 2 - 2);
+            this.ctx.fillText(this.name.toUpperCase(), 120, this.canvas.height / 2 - 2);
         } else if (this.type === AxisType.y) {
             this.ctx.save();
             this.ctx.translate(this.canvas.width / 2 + 16, this.canvas.height - 210);

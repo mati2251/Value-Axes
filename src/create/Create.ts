@@ -54,5 +54,7 @@ declare global {
         exampleSettings: any
         generate: any
         hiddenGenerateMenu: any
+        closeDetails: any
+        saveDetailsAxes: any
     }
 }

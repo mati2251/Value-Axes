@@ -56,5 +56,6 @@ declare global {
         hiddenGenerateMenu: any
         closeDetails: any
         saveDetailsAxes: any
+        saveQuartersDetails: any
     }
 }

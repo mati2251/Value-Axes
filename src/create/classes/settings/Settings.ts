@@ -15,6 +15,7 @@ class Settings {
         window.exampleSettings = this.exampleSettings
         window.closeDetails = this.closeDetails
         window.saveDetailsAxes = this.saveDetailsAxes
+        window.saveQuartersDetails = this.saveQuartersDetails
         this.chart = chart
         this.displayAll()
     }
@@ -52,8 +53,7 @@ class Settings {
                 <button class="button" onclick="saveDetailsAxes(AxisType.x)">SAVE</button>
             </div>
             `
-        }
-        else if (AxisType.y === axisType) {
+        } else if (AxisType.y === axisType) {
             this.settings.innerHTML = `
             <h3>${this.chart.axesY.name.toUpperCase()} SETTINGS</h3>
             <div class="settingsRow">
@@ -77,7 +77,41 @@ class Settings {
     }
 
     quarterSettings = (type: number) => {
+        this.settings.innerHTML = `
+            <h3>${this.chart.quarters[type].label.toUpperCase()} SETTINGS</h3>
+            <div class="settingsRow">
+                <h4 class="marginRight">Label:</h4>
+                <input id='labelQuarters' value='${this.chart.quarters[type].label}' placeholder="Label">
+            </div>
+            <div class="settingsRow">
+                <h4 class="marginRight">Color:</h4>
+                <input id='colorQuarters' type="color" style="all: initial; height: 20px; width: 20px" value='${this.chart.quarters[type].color}'>
+            </div>
+            <div class="buttonContainer">
+                <button class="button" onclick="closeDetails()">CLOSE</button>
+                <button class="button" onclick="saveQuartersDetails(${type})">SAVE</button>
+            </div>
+            `
+    }
 
+    saveQuartersDetails = (type: number) => {
+        // @ts-ignore
+        const label = document.getElementById('labelQuarters').value.toString()
+        // @ts-ignore
+        const color = document.getElementById('colorQuarters').value.toString()
+        if (label.length > 40) {
+            if (!this.alert) {
+                this.settings.innerHTML += `<h4 style="color: #c70000">TOO LONG VALUES. MAX LENGTH EVERY VALUES IS 40 CHARACTERS</h4>`
+                this.alert = true
+            }
+        } else {
+            this.chart.quarters[type].label = label
+            this.chart.quarters[type].color = color
+            this.closeDetails()
+            this.chart.clean()
+            this.chart.draw()
+            this.alert = false
+        }
     }
 
     exampleSettings = (id: number) => {
@@ -158,33 +192,33 @@ class Settings {
         `
     }
 
-
     saveDetailsAxes = (axisType: AxisType) => {
-            const name = document.getElementById('labelAxes').value.toString()
-            const left = document.getElementById('leftExtremes').value.toString()
-            const right = document.getElementById('rightExtremes').value.toString()
-            if(name.length > 40 || left.length > 40 || right.length > 40){
-                if(!this.alert) {
-                    this.settings.innerHTML += `<h4 style="color: #c70000">TOO LONG VALUES. MAX LENGTH EVERY VALUES IS 40 CHARACTERS</h4>`
-                    this.alert = true
-                }
+        // @ts-ignore
+        const name = document.getElementById('labelAxes').value.toString()
+        // @ts-ignore
+        const left = document.getElementById('leftExtremes').value.toString()
+        // @ts-ignore
+        const right = document.getElementById('rightExtremes').value.toString()
+        if (name.length > 40 || left.length > 40 || right.length > 40) {
+            if (!this.alert) {
+                this.settings.innerHTML += `<h4 style="color: #c70000">TOO LONG VALUES. MAX LENGTH EVERY VALUES IS 40 CHARACTERS</h4>`
+                this.alert = true
             }
-            else{
-                if(AxisType.x){
-                    this.chart.axesX.name = name
-                    this.chart.axesX.extremes.left = left
-                    this.chart.axesX.extremes.right = right
-                }
-                else{
-                    this.chart.axesY.name = name
-                    this.chart.axesY.extremes.left = left
-                    this.chart.axesY.extremes.right = right
-                }
-                this.closeDetails()
-                this.chart.clean()
-                this.chart.draw()
-                this.alert = false
+        } else {
+            if (AxisType.x) {
+                this.chart.axesX.name = name
+                this.chart.axesX.extremes.left = left
+                this.chart.axesX.extremes.right = right
+            } else {
+                this.chart.axesY.name = name
+                this.chart.axesY.extremes.left = left
+                this.chart.axesY.extremes.right = right
             }
+            this.closeDetails()
+            this.chart.clean()
+            this.chart.draw()
+            this.alert = false
+        }
     }
 
     closeDetails = () => {

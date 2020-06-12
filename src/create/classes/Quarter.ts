@@ -37,6 +37,12 @@ class Quarter {
     drawQuartersLabels = () => {
         this.ctx.font = "30px Viga"
         this.ctx.textAlign = "center"
+        if(this.label.length > 26){
+            this.ctx.font = "16px Viga"
+        }
+        else if(this.label.length > 20){
+            this.ctx.font = "24px Viga"
+        }
         if (this.type === 0) {
             this.ctx.fillText(this.label.toUpperCase(), 300, 300)
         } else if (this.type === 1) {

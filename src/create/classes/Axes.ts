@@ -62,8 +62,9 @@ class Axes {
         if (this.type === AxisType.x) {
             this.ctx.fillText(this.name.toUpperCase(), 120, this.canvas.height / 2 - 2);
         } else if (this.type === AxisType.y) {
+            this.ctx.textAlign = "end";
             this.ctx.save();
-            this.ctx.translate(this.canvas.width / 2 + 16, this.canvas.height - 210);
+            this.ctx.translate(this.canvas.width / 2 + 16, this.canvas.height - 120);
             this.ctx.rotate(Math.PI / 2);
             this.ctx.fillText(this.name.toUpperCase(), 0, 0);
             this.ctx.restore();

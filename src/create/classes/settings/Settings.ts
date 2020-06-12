@@ -53,9 +53,31 @@ class Settings {
             </div>
             `
         }
+        else if (AxisType.y === axisType) {
+            this.settings.innerHTML = `
+            <h3>${this.chart.axesY.name.toUpperCase()} SETTINGS</h3>
+            <div class="settingsRow">
+                <h4 class="marginRight">Label:</h4>
+                <input id='labelAxes' value='${this.chart.axesY.name}' placeholder="Label">
+            </div>
+            <div class="settingsRow">
+                <h4 class="marginRight">Bottom Extreme:</h4>
+                <input id='leftExtremes' value='${this.chart.axesY.extremes.left}' placeholder="Left Extreme">
+            </div>
+            <div class="settingsRow">
+                <h4 class="marginRight">Top Extreme:</h4>
+                <input id="rightExtremes" value='${this.chart.axesY.extremes.right}' placeholder="Right Extreme">
+            </div>
+            <div class="buttonContainer">
+                <button class="button" onclick="closeDetails()">CLOSE</button>
+                <button class="button" onclick="saveDetailsAxes(AxisType.y)">SAVE</button>
+            </div>
+            `
+        }
     }
 
     quarterSettings = (type: number) => {
+
     }
 
     exampleSettings = (id: number) => {
@@ -138,7 +160,6 @@ class Settings {
 
 
     saveDetailsAxes = (axisType: AxisType) => {
-        if (axisType === AxisType.x) {
             const name = document.getElementById('labelAxes').value.toString()
             const left = document.getElementById('leftExtremes').value.toString()
             const right = document.getElementById('rightExtremes').value.toString()
@@ -149,15 +170,21 @@ class Settings {
                 }
             }
             else{
-                this.chart.axesX.name = name
-                this.chart.axesX.extremes.left = left
-                this.chart.axesX.extremes.right = right
+                if(AxisType.x){
+                    this.chart.axesX.name = name
+                    this.chart.axesX.extremes.left = left
+                    this.chart.axesX.extremes.right = right
+                }
+                else{
+                    this.chart.axesY.name = name
+                    this.chart.axesY.extremes.left = left
+                    this.chart.axesY.extremes.right = right
+                }
                 this.closeDetails()
                 this.chart.clean()
                 this.chart.draw()
                 this.alert = false
             }
-        }
     }
 
     closeDetails = () => {

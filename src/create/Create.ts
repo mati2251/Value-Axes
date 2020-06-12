@@ -14,8 +14,25 @@ const chart: Chart = new Chart("Chart Name", {left: "Left Value", right: "Right 
         fourth: "Fourth Quarter"
     }, canvas);
 const settings: Settings = new Settings(chart);
+const menu: any = document.getElementById('generateMenu')
+menu.style = 'display: none'
 window.AxisType = AxisType
 
+const generate = () => {
+    const img = canvas.toDataURL("image/png");
+    displayGenerateMenu()
+}
+
+const displayGenerateMenu = () => {
+    menu.style = 'display: flex'
+}
+
+const hiddenGenerateMenu = () => {
+    menu.style = 'display: none'
+}
+
+window.generate = generate
+window.hiddenGenerateMenu = hiddenGenerateMenu
 declare global {
     interface Window {
         axesSetting: any
@@ -23,5 +40,8 @@ declare global {
         quarterSettings: any
         createExample: any
         removeExample: any
+        exampleSettings: any
+        generate: any
+        hiddenGenerateMenu: any
     }
 }

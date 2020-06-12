@@ -11,6 +11,7 @@ class Settings {
         window.quarterSettings = this.quarterSettings
         window.createExample = this.createExample
         window.removeExample = this.removeExample
+        window.exampleSettings = this.exampleSettings
         this.chart = chart
         this.displayAll()
     }
@@ -32,6 +33,10 @@ class Settings {
     }
 
     quarterSettings = (type: number) => {
+    }
+
+    exampleSettings = (id: number) => {
+
     }
 
     removeExample = (id: number) => {
@@ -94,7 +99,7 @@ class Settings {
         ${this.chart.examples.map((item) => {
             return (`
             <div class="settingsRow">
-                <button onclick="quarterSettings()">
+                <button onclick="exampleSettings(${item.id})">
                     <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <button onclick="removeExample(${item.id})">

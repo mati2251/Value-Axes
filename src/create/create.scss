@@ -1,10 +1,10 @@
-.logo{
+.logo {
   margin: 10px;
   width: 250px;
   height: auto;
 }
 
-body{
+body {
   width: 100%;
   margin: 0;
   display: flex;
@@ -12,21 +12,23 @@ body{
   justify-content: space-between;
 }
 
-.instruction{
+.instruction {
   margin: 10px;
   width: 250px;
   padding-left: 10px;
 }
 
-.settings{
+.settings {
   width: 25vw;
   min-height: 100vh;
   max-height: 100%;
   background-color: #F6F6F6;
   border-left: 2px solid #707070;
+  display: flex;
+  flex-direction: column;
 }
 
-.settings h2{
+.settings h2 {
   margin: 15px;
 }
 
@@ -37,12 +39,36 @@ h5 {
   color: #8F8F8F;
 }
 
-canvas{
+canvas {
   margin-top: 50px;
   width: 40vw;
   height: 40vw;
 }
 
-.settingsDetails{
+.settingsDetails {
   margin: 10px 20px 10px 20px;
+  height: 78vh;
+  overflow-y: auto;
+}
+
+.generate {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.generateMenu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generateMenu .menu {
+  width: 600px;
+  height: 600px;
+  background-color: #d2cfcf;
+  border-radius: 30px;
 }

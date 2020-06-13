@@ -39,8 +39,10 @@ const hiddenGenerateMenu = () => {
 
 const downloadChart = () => {
     const link = document.getElementById('download');
-    link.setAttribute("href", image);
-    link.setAttribute("download","ValueAxes.png");
+    link.onclick = () => {
+        link.setAttribute('href', image)
+        link.setAttribute('download', 'ValueAxes.png')
+    }
 }
 
 downloadChart()

@@ -32,6 +32,7 @@ class Chart {
     draw = () => {
         this.ctx.fillStyle = "white";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.fillStyle = 'black'
         this.drawTitle()
         this.quarters.forEach((item) => item.draw())
         this.examples.forEach((item) => item.draw())
@@ -45,11 +46,9 @@ class Chart {
     }
 
     drawTitle = () => {
-        this.ctx.beginPath()
         this.ctx.font = "40px Viga"
         this.ctx.textAlign = "center"
         this.ctx.fillText(this.name.toUpperCase(), this.canvas.width/2, 40)
-        this.ctx.closePath()
     }
 
     drawLogo = () => {

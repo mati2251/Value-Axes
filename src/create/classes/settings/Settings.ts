@@ -6,6 +6,7 @@ class Settings {
     settings = document.getElementById("settings")
     chart: Chart
     alert: boolean = false
+    photo: any = ''
 
     constructor(chart: Chart) {
         window.axesSetting = this.axesSettings
@@ -18,6 +19,7 @@ class Settings {
         window.saveQuartersDetails = this.saveQuartersDetails
         window.saveExampleDetails = this.saveExampleDetails
         window.controlPositionInput = this.controlPositionInput
+        window.photoLoad = this.photoLoad
         this.chart = chart
         this.displayAll()
     }
@@ -142,6 +144,10 @@ class Settings {
                 <h4 class="marginRight">Color:</h4>
                 <input id='colorExample' type="color" style="all: initial; height: 20px; width: 20px" value='${example.color}'>
             </div>
+            <div>
+                <h4 class="marginRight"> Photo: </h4>
+                <input type="file" accept="image/jpeg, image/png" onchange="photoLoad(event)">
+            </div>
             <div class="buttonContainer">
                 <button class="button" onclick="closeDetails()">CLOSE</button>
                 <button class="button" onclick="saveExampleDetails(${id})">SAVE</button>
@@ -149,9 +155,13 @@ class Settings {
         `
     }
 
+    photoLoad = (event: any) => {
+        this.photo = URL.createObjectURL(event.target.files[0])
+    }
+
     controlPositionInput = (input: any) => {
         const value = input.value;
-        if(isNaN(value) || parseInt(value) > 100 || parseInt(value) < 0){
+        if (isNaN(value) || parseInt(value) > 100 || parseInt(value) < 0) {
             console.log(input.defaultValue)
             input.value = input.defaultValue
         }
@@ -179,6 +189,9 @@ class Settings {
             this.chart.examples[index].x = x
             this.chart.examples[index].y = y
             this.chart.examples[index].color = color
+            if (this.photo !== '') {
+                this.chart.examples[index].photo = this.photo
+            }
             this.closeDetails()
             this.chart.clean()
             this.chart.draw()
@@ -293,6 +306,7 @@ class Settings {
         this.settings.innerHTML = ''
         this.displayAll()
         this.alert = false
+        this.photo = ''
     }
 }
 

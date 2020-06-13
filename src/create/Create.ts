@@ -17,13 +17,16 @@ const settings: Settings = new Settings(chart);
 const menu: any = document.getElementById('generateMenu')
 menu.style = 'display: none'
 window.AxisType = AxisType
-let img: any
+let image: any
 
 const generate = () => {
-    img = canvas.toDataURL("image/png");
+    const img = canvas.toDataURL("image/png");
     document.getElementById('imgContainer').innerHTML = `
-    <img src="${img}" alt="Value Axes"/>
+    <img src="${img}" alt="Value Axes" id="generateImage"/>
     `
+    // @ts-ignore
+    image = document.getElementById('generateImage').src
+    console.log(im)
     displayGenerateMenu()
 }
 
@@ -37,8 +40,8 @@ const hiddenGenerateMenu = () => {
 
 const downloadChart = () => {
     const link = document.getElementById('download');
-    link.setAttribute('download', 'ValueAxes.png');
-    link.setAttribute('href', canvas.toDataURL("image/png"));
+    link.setAttribute("href", image);
+    link.setAttribute("download","ValueAxes.png");
 }
 
 downloadChart()
@@ -60,5 +63,6 @@ declare global {
         saveQuartersDetails: any
         saveExampleDetails: any
         controlPositionInput: any
+        photoLoad: any
     }
 }

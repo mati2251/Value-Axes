@@ -45,17 +45,21 @@ class Chart {
     }
 
     drawTitle = () => {
+        this.ctx.beginPath()
         this.ctx.font = "40px Viga"
         this.ctx.textAlign = "center"
         this.ctx.fillText(this.name.toUpperCase(), this.canvas.width/2, 40)
+        this.ctx.closePath()
     }
 
     drawLogo = () => {
+        this.ctx.beginPath()
         const image = new Image();
         image.src = '../../resources/axis.png'
         image.onload = () => {
             this.ctx.drawImage(image, 800, 900, 153, 39)
         }
+        this.ctx.closePath()
     }
 
 }

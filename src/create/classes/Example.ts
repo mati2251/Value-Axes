@@ -5,6 +5,7 @@ class Example {
     label: string
     color: string
     ctx: any
+    photo: string = ''
     static count: number = 0
 
     constructor(x: number, y: number, label: string, color: string, ctx: any) {
@@ -25,6 +26,7 @@ class Example {
         this.ctx.fill()
         this.drawLabel()
         this.ctx.fillStyle = '#000000'
+        this.drawImage()
         this.ctx.closePath()
     }
 
@@ -33,6 +35,16 @@ class Example {
         this.ctx.font = "16px Viga"
         this.ctx.textAlign = "start"
         this.ctx.fillText(this.label, 130+(this.x*7.8), 110+(this.y*7.8))
+    }
+
+    drawImage = () => {
+        if(this.photo !== ''){
+            const image = new Image()
+            image.src = this.photo
+            image.onload = () => {
+                this.ctx.drawImage(image,130+(this.x*7.8), 120+(this.y*7.8), 50, 50)
+            }
+        }
     }
 }
 

@@ -332,7 +332,7 @@ class Settings {
                 this.alert = true
             }
         } else {
-            if (AxisType.x) {
+            if (AxisType.x === axisType) {
                 this.chart.axesX.name = name
                 this.chart.axesX.extremes.left = left
                 this.chart.axesX.extremes.right = right

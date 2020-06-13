@@ -26,7 +26,6 @@ const generate = () => {
     `
     // @ts-ignore
     image = document.getElementById('generateImage').src
-    console.log(im)
     displayGenerateMenu()
 }
 

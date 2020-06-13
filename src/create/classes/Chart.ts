@@ -26,7 +26,7 @@ class Chart {
     }
 
     addExample = () =>{
-        this.examples.push(new Example(20,20,'Example', '#000000', this.ctx))
+        this.examples.push(new Example(0,0,'Example', '#000000', this.ctx))
     }
 
     draw = () => {

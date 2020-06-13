@@ -21,9 +21,18 @@ class Example {
     draw = () => {
         this.ctx.beginPath()
         this.ctx.fillStyle = this.color
-        this.ctx.arc(95+this.x, 85+this.y, 6, 0, Math.PI * 2)
+        this.ctx.arc(115+(this.x*7.8), 105+(this.y*7.8), 6, 0, Math.PI * 2)
         this.ctx.fill()
+        this.drawLabel()
+        this.ctx.fillStyle = '#000000'
         this.ctx.closePath()
+    }
+
+    drawLabel = () => {
+        this.ctx.fillStyle = this.color
+        this.ctx.font = "16px Viga"
+        this.ctx.textAlign = "start"
+        this.ctx.fillText(this.label, 130+(this.x*7.8), 110+(this.y*7.8))
     }
 }
 

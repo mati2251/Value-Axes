@@ -17,9 +17,10 @@ const settings: Settings = new Settings(chart);
 const menu: any = document.getElementById('generateMenu')
 menu.style = 'display: none'
 window.AxisType = AxisType
+let img: any
 
 const generate = () => {
-    const img = canvas.toDataURL("image/png");
+    img = canvas.toDataURL("image/png");
     document.getElementById('imgContainer').innerHTML = `
     <img src="${img}" alt="Value Axes"/>
     `
@@ -37,7 +38,7 @@ const hiddenGenerateMenu = () => {
 const downloadChart = () => {
     const link = document.getElementById('download');
     link.setAttribute('download', 'ValueAxes.png');
-    link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+    link.setAttribute('href', canvas.toDataURL("image/png"));
 }
 
 downloadChart()
@@ -57,5 +58,7 @@ declare global {
         closeDetails: any
         saveDetailsAxes: any
         saveQuartersDetails: any
+        saveExampleDetails: any
+        controlPositionInput: any
     }
 }

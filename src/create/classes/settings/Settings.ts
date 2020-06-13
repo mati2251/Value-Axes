@@ -16,9 +16,11 @@ class Settings {
         window.exampleSettings = this.exampleSettings
         window.closeDetails = this.closeDetails
         window.saveDetailsAxes = this.saveDetailsAxes
+        window.chartSettings = this.chartSettings
         window.saveQuartersDetails = this.saveQuartersDetails
         window.saveExampleDetails = this.saveExampleDetails
         window.controlPositionInput = this.controlPositionInput
+        window.saveChart = this.saveChart
         window.photoLoad = this.photoLoad
         this.chart = chart
         this.displayAll()
@@ -31,9 +33,52 @@ class Settings {
     }
 
     displayAll = () => {
+        this.displayChartSettings()
         this.displayAxesSettings()
         this.displayAxesQuarters()
         this.displayExample()
+    }
+
+    displayChartSettings = () => {
+        this.settings.innerHTML += `
+            <div class="settingsRow">
+                <button onclick="chartSettings()">
+                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                </button>
+                <h4>CHART</h4>
+            </div>
+           `
+    }
+
+    chartSettings = () => {
+        this.settings.innerHTML = `
+            <h3>CHART SETTINGS</h3>
+            <div class="settingsRow">
+                <h4 class="marginRight">Label:</h4>
+                <input id="chartName" value="${this.chart.name}" placeholder="Label">
+            </div>
+            <div class="buttonContainer">
+                <button class="button" onclick="closeDetails()">CLOSE</button>
+                <button class="button" onclick="saveChart()">SAVE</button>
+            </div>
+            `
+    }
+
+    saveChart = () => {
+        // @ts-ignore
+        const name = document.getElementById('chartName').value
+        if (name.length > 40) {
+            if (!this.alert) {
+                this.settings.innerHTML += `<h4 style="color: #c70000">TOO LONG VALUES. MAX LENGTH EVERY VALUES IS 40 CHARACTERS</h4>`
+                this.alert = true
+            }
+        } else {
+            this.chart.name = name
+            this.closeDetails()
+            this.chart.clean()
+            this.chart.draw()
+            this.alert = false
+        }
     }
 
     axesSettings = (axisType: AxisType) => {
@@ -215,7 +260,8 @@ class Settings {
                     <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.axesX.name.toUpperCase()}</h4>
-            </div><div class="settingsRow">
+            </div>
+            <div class="settingsRow">
                 <button onclick="axesSetting(AxisType.y)">
                     <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>

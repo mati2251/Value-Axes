@@ -65,5 +65,7 @@ declare global {
         saveExampleDetails: any
         controlPositionInput: any
         photoLoad: any
+        chartSettings: any
+        saveChart: any
     }
 }

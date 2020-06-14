@@ -22,9 +22,9 @@ class Quarter {
     drawQuartersColor = () => {
         this.ctx.beginPath()
         this.ctx.fillStyle = this.color
-        if (this.type === 0) {
+        if (this.type === 1) {
             this.ctx.fillRect(110, 100, this.canvas.width / 2 - 100, this.canvas.height / 2 - 90)
-        } else if (this.type === 1) {
+        } else if (this.type === 0) {
             this.ctx.fillRect(this.canvas.width / 2 + 10, 100, this.canvas.width / 2 - 110, this.canvas.height / 2 - 90)
         } else if (this.type === 2) {
             this.ctx.fillRect(110, this.canvas.height / 2 + 10, this.canvas.width / 2 - 100, this.canvas.height / 2 - 120)
@@ -43,9 +43,9 @@ class Quarter {
         else if(this.label.length > 20){
             this.ctx.font = "24px Viga"
         }
-        if (this.type === 0) {
+        if (this.type === 1) {
             this.ctx.fillText(this.label.toUpperCase(), 300, 300)
-        } else if (this.type === 1) {
+        } else if (this.type === 0) {
             this.ctx.fillText(this.label.toUpperCase(), 700, 300)
         } else if (this.type === 2) {
             this.ctx.fillText(this.label.toUpperCase(), 300, 700)

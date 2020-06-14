@@ -4,7 +4,8 @@
 }
 
 .example {
-  width: 500px;
+  width: 380px;
+  padding: 0 60px 0 60px;
   height: 380px;
 }
 
@@ -25,7 +26,8 @@
 
 @media (max-width: 1650px) {
   .example {
-    width: 400px;
+    width: 300px;
+    padding: 0 50px 0  50px;
     height: 300px;
   }
 
@@ -43,7 +45,8 @@
 
 @media (max-width: 1330px) {
   .example {
-    width: 300px;
+    width: 200px;
+    padding: 0 50px 0  50px;
     height: 200px;
   }
 
@@ -60,7 +63,8 @@
 
 @media (max-width: 1040px) {
   .example {
-    width: 250px;
+    width: 166px;
+    padding: 0 42px 0  42px;
     height: 166px;
   }
 
@@ -72,7 +76,8 @@
 
 @media (max-width: 870px) {
   .example{
-    width: 200px;
+    width: 133px;
+    padding: 0 33px 0  33px;
     height: 133px;
   }
 
@@ -90,10 +95,6 @@ body{
 }
 
 @media (max-width: 730px) {
-  .example{
-    width: 175px;
-    height: 116px;
-  }
 
   .container__text{
     width: 175px;
@@ -106,8 +107,9 @@ body{
   }
 
   .example {
-    width: 300px;
+    width: 200px;
     height: 200px;
+    padding: 0 50px 0  50px;
     margin-bottom: 10px;
   }
 
@@ -131,7 +133,8 @@ body{
 
 @media (max-width: 320px) {
   .example {
-    width: 200px;
+    width: 122px;
+    padding: 0 44px 0  44px;
     height: 122px;
     margin-bottom: 10px;
   }

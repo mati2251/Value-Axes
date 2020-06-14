@@ -29,7 +29,7 @@ module.exports = {
 	output: {
 		filename: '[name].js',
 		sourceMapFilename: '[name].js.map',
-		path: path.resolve(__dirname, `public/`),
+		path: path.resolve(__dirname, `docs/`),
 	},
 	plugins: [
 		new CopyPlugin({

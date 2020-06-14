@@ -1,1 +1,169 @@
-!function(e){var t={};function n(i){if(t[i])return t[i].exports;var o=t[i]={i:i,l:!1,exports:{}};return e[i].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,i){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:i})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(i,o,function(t){return e[t]}.bind(null,o));return i},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=4)}([function(e,t,n){"use strict";var i,o=function(){return void 0===i&&(i=Boolean(window&&document&&document.all&&!window.atob)),i},r=function(){var e={};return function(t){if(void 0===e[t]){var n=document.querySelector(t);if(window.HTMLIFrameElement&&n instanceof window.HTMLIFrameElement)try{n=n.contentDocument.head}catch(e){n=null}e[t]=n}return e[t]}}(),a=[];function p(e){for(var t=-1,n=0;n<a.length;n++)if(a[n].identifier===e){t=n;break}return t}function x(e,t){for(var n={},i=[],o=0;o<e.length;o++){var r=e[o],x=t.base?r[0]+t.base:r[0],s=n[x]||0,c="".concat(x," ").concat(s);n[x]=s+1;var d=p(c),h={css:r[1],media:r[2],sourceMap:r[3]};-1!==d?(a[d].references++,a[d].updater(h)):a.push({identifier:c,updater:g(h,t),references:1}),i.push(c)}return i}function s(e){var t=document.createElement("style"),i=e.attributes||{};if(void 0===i.nonce){var o=n.nc;o&&(i.nonce=o)}if(Object.keys(i).forEach((function(e){t.setAttribute(e,i[e])})),"function"==typeof e.insert)e.insert(t);else{var a=r(e.insert||"head");if(!a)throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");a.appendChild(t)}return t}var c,d=(c=[],function(e,t){return c[e]=t,c.filter(Boolean).join("\n")});function h(e,t,n,i){var o=n?"":i.media?"@media ".concat(i.media," {").concat(i.css,"}"):i.css;if(e.styleSheet)e.styleSheet.cssText=d(t,o);else{var r=document.createTextNode(o),a=e.childNodes;a[t]&&e.removeChild(a[t]),a.length?e.insertBefore(r,a[t]):e.appendChild(r)}}function f(e,t,n){var i=n.css,o=n.media,r=n.sourceMap;if(o?e.setAttribute("media",o):e.removeAttribute("media"),r&&btoa&&(i+="\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(r))))," */")),e.styleSheet)e.styleSheet.cssText=i;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(i))}}var l=null,u=0;function g(e,t){var n,i,o;if(t.singleton){var r=u++;n=l||(l=s(t)),i=h.bind(null,n,r,!1),o=h.bind(null,n,r,!0)}else n=s(t),i=f.bind(null,n,t),o=function(){!function(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e)}(n)};return i(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;i(e=t)}else o()}}e.exports=function(e,t){(t=t||{}).singleton||"boolean"==typeof t.singleton||(t.singleton=o());var n=x(e=e||[],t);return function(e){if(e=e||[],"[object Array]"===Object.prototype.toString.call(e)){for(var i=0;i<n.length;i++){var o=p(n[i]);a[o].references--}for(var r=x(e,t),s=0;s<n.length;s++){var c=p(n[s]);0===a[c].references&&(a[c].updater(),a.splice(c,1))}n=r}}}},function(e,t,n){"use strict";e.exports=function(e){var t=[];return t.toString=function(){return this.map((function(t){var n=function(e,t){var n=e[1]||"",i=e[3];if(!i)return n;if(t&&"function"==typeof btoa){var o=(a=i,p=btoa(unescape(encodeURIComponent(JSON.stringify(a)))),x="sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(p),"/*# ".concat(x," */")),r=i.sources.map((function(e){return"/*# sourceURL=".concat(i.sourceRoot||"").concat(e," */")}));return[n].concat(r).concat([o]).join("\n")}var a,p,x;return[n].join("\n")}(t,e);return t[2]?"@media ".concat(t[2]," {").concat(n,"}"):n})).join("")},t.i=function(e,n,i){"string"==typeof e&&(e=[[null,e,""]]);var o={};if(i)for(var r=0;r<this.length;r++){var a=this[r][0];null!=a&&(o[a]=!0)}for(var p=0;p<e.length;p++){var x=[].concat(e[p]);i&&o[x[0]]||(n&&(x[2]?x[2]="".concat(n," and ").concat(x[2]):x[2]=n),t.push(x))}},t}},function(e,t,n){var i=n(0),o=n(3);"string"==typeof(o=o.__esModule?o.default:o)&&(o=[[e.i,o,""]]);var r={insert:"head",singleton:!1};i(o,r);e.exports=o.locals||{}},function(e,t,n){(t=n(1)(!1)).push([e.i,"body{font-family:'Roboto Condensed', sans-serif;font-weight:300;color:#404040}h2{font-family:'Viga', sans-serif;font-size:26px;margin:0}h3{font-size:26px;margin:0}h4{font-size:24px;font-weight:lighter;margin:0}h5{font-size:20px;font-weight:lighter;margin:0}a{all:unset;color:#008DFF;border-bottom:#008DFF 2px solid;padding-bottom:1px}.button{all:unset;padding:5px 10px 5px 10px;background-color:#85D64E;color:white;font-family:'Viga', sans-serif;font-size:26px;border-radius:13px;cursor:pointer;margin:10px;transition:0.3s all ease}.button:hover{background-color:#73bf3f;transition:0.3s all ease}.github{display:flex;flex-direction:row;align-items:center;align-self:flex-start;cursor:pointer}.github img{width:60px;height:60px;padding-right:10px}footer{display:flex;flex-direction:row;justify-content:space-between;margin-top:10px;align-items:center;width:100%}@media (max-width: 1650px){h2{font-size:20px}h3{font-size:20px}h4{font-size:18px;font-weight:lighter;margin:0}h5{font-size:16px;font-weight:lighter;margin:0}}@media (max-width: 1330px){h2{font-size:15px}h3{font-size:15px}h4{font-size:13px;font-weight:lighter;margin:0}h5{font-size:12px;font-weight:lighter;margin:0}.github img{width:30px;height:30px}}@media (max-width: 1040px){h2{font-size:12px}h3{font-size:12px}h4{font-size:11px;font-weight:lighter;margin:0}h5{font-size:10px;font-weight:lighter;margin:0}}@media (max-width: 870px){h2{font-size:10px}h3{font-size:10px}h4{font-size:9px;font-weight:lighter;margin:0}h5{font-size:9px;font-weight:lighter;margin:0}.github img{width:20px;height:20px}}@media (max-width: 730px){h2{font-size:14px}h3{font-size:14px}body{margin:10px}footer h2{font-size:8px}footer h3{font-size:8px}}@media (max-width: 650px){h2{font-size:12px}h3{font-size:12px}}@media (max-width: 360px){footer h2{font-size:6px}footer h3{font-size:6px}}\n",""]),e.exports=t},function(e,t,n){"use strict";n.r(t);n(2),n(5)},function(e,t,n){var i=n(0),o=n(6);"string"==typeof(o=o.__esModule?o.default:o)&&(o=[[e.i,o,""]]);var r={insert:"head",singleton:!1};i(o,r);e.exports=o.locals||{}},function(e,t,n){(t=n(1)(!1)).push([e.i,".container{display:flex;flex-direction:row}.example{width:380px;padding:0 60px 0 60px;height:380px}.logo{width:300px;height:auto;align-self:center;margin-bottom:30px}.container__text{display:flex;flex-direction:column;margin:0 60px 0 60px;width:500px;height:380px}@media (max-width: 1650px){.example{width:300px;padding:0 50px 0  50px;height:300px}.container__text{width:400px;height:300px}}@media (max-width: 1450px){.container__text{margin:0 30px 0 30px}}@media (max-width: 1330px){.example{width:200px;padding:0 50px 0  50px;height:200px}.container__text{width:300px;height:200px}.logo{margin-bottom:5px;width:150px}}@media (max-width: 1040px){.example{width:166px;padding:0 42px 0  42px;height:166px}.container__text{width:250px;height:166px}}@media (max-width: 870px){.example{width:133px;padding:0 33px 0  33px;height:133px}.container__text{width:200px;height:133px}}body{margin:40px 40px 0 40px;display:flex;flex-direction:column;align-items:center}@media (max-width: 730px){.container__text{width:175px;height:116px}.container{flex-direction:column;align-items:center}.example{width:200px;height:200px;padding:0 50px 0  50px;margin-bottom:10px}.container__text{width:400px;height:150px}.example:nth-child(1){display:none}}@media (max-width: 460px){.container__text{width:300px;height:150px;margin:0 10px 0 10px}}@media (max-width: 320px){.example{width:122px;padding:0 44px 0  44px;height:122px;margin-bottom:10px}.container__text{width:200px;height:200px}}\n",""]),e.exports=t}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.ts");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/global.scss":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/global.scss ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"body {\\n  font-family: 'Roboto Condensed', sans-serif;\\n  font-weight: 300;\\n  color: #404040; }\\n\\nh2 {\\n  font-family: 'Viga', sans-serif;\\n  font-size: 26px;\\n  margin: 0; }\\n\\nh3 {\\n  font-size: 26px;\\n  margin: 0; }\\n\\nh4 {\\n  font-size: 24px;\\n  font-weight: lighter;\\n  margin: 0; }\\n\\nh5 {\\n  font-size: 20px;\\n  font-weight: lighter;\\n  margin: 0; }\\n\\na {\\n  all: unset;\\n  color: #008DFF;\\n  border-bottom: #008DFF 2px solid;\\n  padding-bottom: 1px; }\\n\\n.button {\\n  all: unset;\\n  padding: 5px 10px 5px 10px;\\n  background-color: #85D64E;\\n  color: white;\\n  font-family: 'Viga', sans-serif;\\n  font-size: 26px;\\n  border-radius: 13px;\\n  cursor: pointer;\\n  margin: 10px;\\n  transition: 0.3s all ease; }\\n\\n.button:hover {\\n  background-color: #73bf3f;\\n  transition: 0.3s all ease; }\\n\\n.github {\\n  display: flex;\\n  flex-direction: row;\\n  align-items: center;\\n  align-self: flex-start;\\n  cursor: pointer; }\\n\\n.github img {\\n  width: 60px;\\n  height: 60px;\\n  padding-right: 10px; }\\n\\nfooter {\\n  display: flex;\\n  flex-direction: row;\\n  justify-content: space-between;\\n  margin-top: 10px;\\n  align-items: center;\\n  width: 100%; }\\n\\n@media (max-width: 1650px) {\\n  h2 {\\n    font-size: 20px; }\\n  h3 {\\n    font-size: 20px; }\\n  h4 {\\n    font-size: 18px;\\n    font-weight: lighter;\\n    margin: 0; }\\n  h5 {\\n    font-size: 16px;\\n    font-weight: lighter;\\n    margin: 0; } }\\n\\n@media (max-width: 1330px) {\\n  h2 {\\n    font-size: 15px; }\\n  h3 {\\n    font-size: 15px; }\\n  h4 {\\n    font-size: 13px;\\n    font-weight: lighter;\\n    margin: 0; }\\n  h5 {\\n    font-size: 12px;\\n    font-weight: lighter;\\n    margin: 0; }\\n  .github img {\\n    width: 30px;\\n    height: 30px; } }\\n\\n@media (max-width: 1040px) {\\n  h2 {\\n    font-size: 12px; }\\n  h3 {\\n    font-size: 12px; }\\n  h4 {\\n    font-size: 11px;\\n    font-weight: lighter;\\n    margin: 0; }\\n  h5 {\\n    font-size: 10px;\\n    font-weight: lighter;\\n    margin: 0; } }\\n\\n@media (max-width: 870px) {\\n  h2 {\\n    font-size: 10px; }\\n  h3 {\\n    font-size: 10px; }\\n  h4 {\\n    font-size: 9px;\\n    font-weight: lighter;\\n    margin: 0; }\\n  h5 {\\n    font-size: 9px;\\n    font-weight: lighter;\\n    margin: 0; }\\n  .github img {\\n    width: 20px;\\n    height: 20px; } }\\n\\n@media (max-width: 730px) {\\n  h2 {\\n    font-size: 14px; }\\n  h3 {\\n    font-size: 14px; }\\n  body {\\n    margin: 10px; }\\n  footer h2 {\\n    font-size: 8px; }\\n  footer h3 {\\n    font-size: 8px; } }\\n\\n@media (max-width: 650px) {\\n  h2 {\\n    font-size: 12px; }\\n  h3 {\\n    font-size: 12px; } }\\n\\n@media (max-width: 360px) {\\n  footer h2 {\\n    font-size: 6px; }\\n  footer h3 {\\n    font-size: 6px; } }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles/global.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".container {\\n  display: flex;\\n  flex-direction: row; }\\n\\n.example {\\n  width: 380px;\\n  padding: 0 60px 0 60px;\\n  height: 380px; }\\n\\n.logo {\\n  width: 300px;\\n  height: auto;\\n  align-self: center;\\n  margin-bottom: 30px; }\\n\\n.container__text {\\n  display: flex;\\n  flex-direction: column;\\n  margin: 0 60px 0 60px;\\n  width: 500px;\\n  height: 380px; }\\n\\n@media (max-width: 1650px) {\\n  .example {\\n    width: 300px;\\n    padding: 0 50px 0  50px;\\n    height: 300px; }\\n  .container__text {\\n    width: 400px;\\n    height: 300px; } }\\n\\n@media (max-width: 1450px) {\\n  .container__text {\\n    margin: 0 30px 0 30px; } }\\n\\n@media (max-width: 1330px) {\\n  .example {\\n    width: 200px;\\n    padding: 0 50px 0  50px;\\n    height: 200px; }\\n  .container__text {\\n    width: 300px;\\n    height: 200px; }\\n  .logo {\\n    margin-bottom: 5px;\\n    width: 150px; } }\\n\\n@media (max-width: 1040px) {\\n  .example {\\n    width: 166px;\\n    padding: 0 42px 0  42px;\\n    height: 166px; }\\n  .container__text {\\n    width: 250px;\\n    height: 166px; } }\\n\\n@media (max-width: 870px) {\\n  .example {\\n    width: 133px;\\n    padding: 0 33px 0  33px;\\n    height: 133px; }\\n  .container__text {\\n    width: 200px;\\n    height: 133px; } }\\n\\nbody {\\n  margin: 40px 40px 0 40px;\\n  display: flex;\\n  flex-direction: column;\\n  align-items: center; }\\n\\n@media (max-width: 730px) {\\n  .container__text {\\n    width: 175px;\\n    height: 116px; }\\n  .container {\\n    flex-direction: column;\\n    align-items: center; }\\n  .example {\\n    width: 200px;\\n    height: 200px;\\n    padding: 0 50px 0  50px;\\n    margin-bottom: 10px; }\\n  .container__text {\\n    width: 400px;\\n    height: 150px; }\\n  .example:nth-child(1) {\\n    display: none; } }\\n\\n@media (max-width: 460px) {\\n  .container__text {\\n    width: 300px;\\n    height: 150px;\\n    margin: 0 10px 0 10px; } }\\n\\n@media (max-width: 320px) {\\n  .example {\\n    width: 122px;\\n    padding: 0 44px 0  44px;\\n    height: 122px;\\n    margin-bottom: 10px; }\\n  .container__text {\\n    width: 200px;\\n    height: 200px; } }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/styles/index.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery, dedupe) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var i = 0; i < this.length; i++) {\n        // eslint-disable-next-line prefer-destructuring\n        var id = this[i][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = [].concat(modules[_i]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        // eslint-disable-next-line no-continue\n        continue;\n      }\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot || '').concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function memorize() {\n    if (typeof memo === 'undefined') {\n      // Test for IE <= 9 as proposed by Browserhacks\n      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805\n      // Tests for existence of standard globals is to allow style-loader\n      // to operate correctly into non-standard environments\n      // @see https://github.com/webpack-contrib/style-loader/issues/177\n      memo = Boolean(window && document && document.all && !window.atob);\n    }\n\n    return memo;\n  };\n}();\n\nvar getTarget = function getTarget() {\n  var memo = {};\n  return function memorize(target) {\n    if (typeof memo[target] === 'undefined') {\n      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself\n\n      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n        try {\n          // This will throw an exception if access to iframe is blocked\n          // due to cross-origin restrictions\n          styleTarget = styleTarget.contentDocument.head;\n        } catch (e) {\n          // istanbul ignore next\n          styleTarget = null;\n        }\n      }\n\n      memo[target] = styleTarget;\n    }\n\n    return memo[target];\n  };\n}();\n\nvar stylesInDom = [];\n\nfunction getIndexByIdentifier(identifier) {\n  var result = -1;\n\n  for (var i = 0; i < stylesInDom.length; i++) {\n    if (stylesInDom[i].identifier === identifier) {\n      result = i;\n      break;\n    }\n  }\n\n  return result;\n}\n\nfunction modulesToDom(list, options) {\n  var idCountMap = {};\n  var identifiers = [];\n\n  for (var i = 0; i < list.length; i++) {\n    var item = list[i];\n    var id = options.base ? item[0] + options.base : item[0];\n    var count = idCountMap[id] || 0;\n    var identifier = \"\".concat(id, \" \").concat(count);\n    idCountMap[id] = count + 1;\n    var index = getIndexByIdentifier(identifier);\n    var obj = {\n      css: item[1],\n      media: item[2],\n      sourceMap: item[3]\n    };\n\n    if (index !== -1) {\n      stylesInDom[index].references++;\n      stylesInDom[index].updater(obj);\n    } else {\n      stylesInDom.push({\n        identifier: identifier,\n        updater: addStyle(obj, options),\n        references: 1\n      });\n    }\n\n    identifiers.push(identifier);\n  }\n\n  return identifiers;\n}\n\nfunction insertStyleElement(options) {\n  var style = document.createElement('style');\n  var attributes = options.attributes || {};\n\n  if (typeof attributes.nonce === 'undefined') {\n    var nonce =  true ? __webpack_require__.nc : undefined;\n\n    if (nonce) {\n      attributes.nonce = nonce;\n    }\n  }\n\n  Object.keys(attributes).forEach(function (key) {\n    style.setAttribute(key, attributes[key]);\n  });\n\n  if (typeof options.insert === 'function') {\n    options.insert(style);\n  } else {\n    var target = getTarget(options.insert || 'head');\n\n    if (!target) {\n      throw new Error(\"Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.\");\n    }\n\n    target.appendChild(style);\n  }\n\n  return style;\n}\n\nfunction removeStyleElement(style) {\n  // istanbul ignore if\n  if (style.parentNode === null) {\n    return false;\n  }\n\n  style.parentNode.removeChild(style);\n}\n/* istanbul ignore next  */\n\n\nvar replaceText = function replaceText() {\n  var textStore = [];\n  return function replace(index, replacement) {\n    textStore[index] = replacement;\n    return textStore.filter(Boolean).join('\\n');\n  };\n}();\n\nfunction applyToSingletonTag(style, index, remove, obj) {\n  var css = remove ? '' : obj.media ? \"@media \".concat(obj.media, \" {\").concat(obj.css, \"}\") : obj.css; // For old IE\n\n  /* istanbul ignore if  */\n\n  if (style.styleSheet) {\n    style.styleSheet.cssText = replaceText(index, css);\n  } else {\n    var cssNode = document.createTextNode(css);\n    var childNodes = style.childNodes;\n\n    if (childNodes[index]) {\n      style.removeChild(childNodes[index]);\n    }\n\n    if (childNodes.length) {\n      style.insertBefore(cssNode, childNodes[index]);\n    } else {\n      style.appendChild(cssNode);\n    }\n  }\n}\n\nfunction applyToTag(style, options, obj) {\n  var css = obj.css;\n  var media = obj.media;\n  var sourceMap = obj.sourceMap;\n\n  if (media) {\n    style.setAttribute('media', media);\n  } else {\n    style.removeAttribute('media');\n  }\n\n  if (sourceMap && btoa) {\n    css += \"\\n/*# sourceMappingURL=data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), \" */\");\n  } // For old IE\n\n  /* istanbul ignore if  */\n\n\n  if (style.styleSheet) {\n    style.styleSheet.cssText = css;\n  } else {\n    while (style.firstChild) {\n      style.removeChild(style.firstChild);\n    }\n\n    style.appendChild(document.createTextNode(css));\n  }\n}\n\nvar singleton = null;\nvar singletonCounter = 0;\n\nfunction addStyle(obj, options) {\n  var style;\n  var update;\n  var remove;\n\n  if (options.singleton) {\n    var styleIndex = singletonCounter++;\n    style = singleton || (singleton = insertStyleElement(options));\n    update = applyToSingletonTag.bind(null, style, styleIndex, false);\n    remove = applyToSingletonTag.bind(null, style, styleIndex, true);\n  } else {\n    style = insertStyleElement(options);\n    update = applyToTag.bind(null, style, options);\n\n    remove = function remove() {\n      removeStyleElement(style);\n    };\n  }\n\n  update(obj);\n  return function updateStyle(newObj) {\n    if (newObj) {\n      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {\n        return;\n      }\n\n      update(obj = newObj);\n    } else {\n      remove();\n    }\n  };\n}\n\nmodule.exports = function (list, options) {\n  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>\n  // tags it will allow on a page\n\n  if (!options.singleton && typeof options.singleton !== 'boolean') {\n    options.singleton = isOldIE();\n  }\n\n  list = list || [];\n  var lastIdentifiers = modulesToDom(list, options);\n  return function update(newList) {\n    newList = newList || [];\n\n    if (Object.prototype.toString.call(newList) !== '[object Array]') {\n      return;\n    }\n\n    for (var i = 0; i < lastIdentifiers.length; i++) {\n      var identifier = lastIdentifiers[i];\n      var index = getIndexByIdentifier(identifier);\n      stylesInDom[index].references--;\n    }\n\n    var newLastIdentifiers = modulesToDom(newList, options);\n\n    for (var _i = 0; _i < lastIdentifiers.length; _i++) {\n      var _identifier = lastIdentifiers[_i];\n\n      var _index = getIndexByIdentifier(_identifier);\n\n      if (stylesInDom[_index].references === 0) {\n        stylesInDom[_index].updater();\n\n        stylesInDom.splice(_index, 1);\n      }\n    }\n\n    lastIdentifiers = newLastIdentifiers;\n  };\n};\n\n//# sourceURL=webpack:///./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js?");
+
+/***/ }),
+
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/global.scss */ \"./src/styles/global.scss\");\n/* harmony import */ var _styles_global_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_global_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/index.scss */ \"./src/styles/index.scss\");\n/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_index_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+
+/***/ }),
+
+/***/ "./src/styles/global.scss":
+/*!********************************!*\
+  !*** ./src/styles/global.scss ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./global.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/global.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/styles/global.scss?");
+
+/***/ }),
+
+/***/ "./src/styles/index.scss":
+/*!*******************************!*\
+  !*** ./src/styles/index.scss ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./index.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/styles/index.scss?");
+
+/***/ })
+
+/******/ });

@@ -43,7 +43,7 @@ class Settings {
         this.settings.innerHTML += `
             <div class="settingsRow">
                 <button onclick="chartSettings()">
-                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                    <img src="../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>CHART</h4>
             </div>
@@ -257,13 +257,13 @@ class Settings {
             `<h3>AXES:</h3>
             <div class="settingsRow">
                 <button onclick="axesSetting(AxisType.x)">
-                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                    <img src="../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.axesX.name.toUpperCase()}</h4>
             </div>
             <div class="settingsRow">
                 <button onclick="axesSetting(AxisType.y)">
-                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                    <img src="../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.axesY.name.toUpperCase()}</h4>
             </div>
@@ -275,24 +275,24 @@ class Settings {
             `<h3>QUARTERS:</h3>
             <div class="settingsRow">
                 <button onclick="quarterSettings(0)">
-                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                    <img src="../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.quarters[0].label.toUpperCase()}</h4>
             </div><div class="settingsRow">
                 <button onclick="quarterSettings(1)">
-                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                    <img src="../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.quarters[1].label.toUpperCase()}</h4>
             </div>
             <div class="settingsRow">
                 <button onclick="quarterSettings(2)">
-                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                    <img src="../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.quarters[2].label.toUpperCase()}</h4>
             </div>
             <div class="settingsRow">
                 <button onclick="quarterSettings(3)">
-                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                    <img src="../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <h4>${this.chart.quarters[3].label.toUpperCase()}</h4>
             </div>
@@ -306,10 +306,10 @@ class Settings {
             return (`
             <div class="settingsRow">
                 <button onclick="exampleSettings(${item.id})">
-                    <img src="../../../resources/settings-icon.svg" alt="settings" class="settingsIcon">
+                    <img src="../resources/settings-icon.svg" alt="settings" class="settingsIcon">
                 </button>
                 <button onclick="removeExample(${item.id})">
-                    <img src="../../../resources/delete.svg" alt="delete" class="deleteIcon">
+                    <img src="../resources/delete.svg" alt="delete" class="deleteIcon">
                 </button>
                 <h4>${item.label.toUpperCase()}</h4>
              </div> 

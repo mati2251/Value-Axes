@@ -54,7 +54,7 @@ class Chart {
     drawLogo = () => {
         this.ctx.beginPath()
         const image = new Image();
-        image.src = '../../resources/axis.png'
+        image.src = '../resources/axis.png'
         image.onload = () => {
             this.ctx.drawImage(image, 800, 900, 153, 39)
         }

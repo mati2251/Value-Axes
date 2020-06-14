@@ -2,6 +2,7 @@
   "name": "value-axes",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://mati2251.github.io/Value-Axes/",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "browser-sync public & webpack --watch",

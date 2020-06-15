@@ -6,7 +6,7 @@ module.exports = {
 		index: './src/index.ts',
 		'create/create': './src/create/Create.ts'
 	},
-	mode: "development",
+	mode: "production",
 	module: {
 		rules: [
 			{

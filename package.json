@@ -5,7 +5,7 @@
   "homepage": "https://mati2251.github.io/Value-Axes/",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "browser-sync public & webpack --watch",
+    "start": "browser-sync docs & webpack --watch",
     "watch": "webpack --watch",
     "clean": "rm -rf public"
   },

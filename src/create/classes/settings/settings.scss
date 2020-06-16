@@ -1,5 +1,4 @@
-.settingsIcon{
-  background-color: #75db34;
+%icon{
   width: 20px;
   height: 20px;
   padding: 8px;
@@ -7,13 +6,14 @@
   margin-right: 20px;
 }
 
+.settingsIcon{
+  background-color: #75db34;
+  @extend %icon
+}
+
 .deleteIcon{
   background-color: #f80e0e;
-  width: 20px;
-  height: 20px;
-  padding: 8px;
-  border-radius: 100px;
-  margin-right: 20px;
+  @extend %icon
 }
 
 .deleteIcon:hover{
@@ -60,4 +60,50 @@ input{
 
 .marginRight{
   margin-right: 20px;
+}
+
+@media (max-width: 1650px) {
+  %icon{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+  }
+
+  .marginRight{
+    margin-right: 10px;
+  }
+
+  .button{
+    font-size: 20px;
+  }
+}
+
+@media( max-width: 1330px) {
+  %icon{
+    width: 10px;
+    height: 10px;
+  }
+
+  .marginRight{
+    margin-right: 10px;
+  }
+
+  .button{
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  canvas{
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 1100px) {
+  canvas{
+    width: 400px;
+    height: 400px;
+  }
 }

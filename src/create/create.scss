@@ -41,8 +41,8 @@ h5 {
 
 canvas {
   margin-top: 50px;
-  width: 40vw;
-  height: 40vw;
+  width: 800px;
+  height: 800px;
 }
 
 .settingsDetails {
@@ -85,4 +85,11 @@ canvas {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+@media (max-width: 1400px){
+  canvas{
+    width: 600px;
+    height: 600px;
+  }
 }

@@ -24,21 +24,28 @@
           rel="stylesheet">
 </head>
 <body>
-<div>
-    <img src="../resources/axis.png" alt="Axes Value" class="logo">
-    <h3 class="instruction">Inscrutions: <br/>
-        1. If you want edit item change his properties on menu <br/>
-        2. After editing click GENERATE and DOWNLOAD
-    </h3>
-</div>
-<canvas id="canvas" width="1000" height="1000">
-</canvas>
-<div class="settings">
-    <h2>SETTINGS MENU</h2>
-    <h5>if you want to change the name of an element, double click on it</h5>
-    <div id="settings" class="settingsDetails">
+<div class="logoCanvas">
+    <div>
+        <img src="../resources/axis.png" alt="Axes Value" class="logo">
+        <h3 class="instruction">Inscrutions: <br/>
+            1. If you want edit item change his properties on menu <br/>
+            2. After editing click GENERATE and DOWNLOAD
+        </h3>
     </div>
-    <button class="button generate" onclick="generate()">GENERATE</button>
+    <canvas id="canvas" width="1000" height="1000">
+    </canvas>
+</div>
+<div class="settings">
+    <h2>
+        SETTINGS MENU
+        <img src="../resources/arrow.png" alt="open menu" class="openMenu">
+    </h2>
+    <div class="hiddenMenu">
+        <h5>if you want to change the name of an element, double click on it</h5>
+        <div id="settings" class="settingsDetails">
+        </div>
+        <button class="button generate" onclick="generate()">GENERATE</button>
+    </div>
 </div>
 <div class="generateMenu" id="generateMenu">
     <div class="menu">

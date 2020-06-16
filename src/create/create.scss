@@ -47,7 +47,6 @@ canvas {
 
 .settingsDetails {
   margin: 10px 20px 10px 20px;
-  height: 78vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -87,9 +86,106 @@ canvas {
   justify-content: space-evenly;
 }
 
+.logoCanvas{
+  display: flex;
+  flex-direction: row;
+}
+
+.openMenu{
+  display: none;
+}
+
 @media (max-width: 1400px){
   canvas{
     width: 600px;
     height: 600px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .instruction{
+    display: none;
+  }
+
+  .logoCanvas{
+    flex-direction: column;
+  }
+
+  canvas{
+    width: 800px;
+    height: 800px;
+  }
+
+  .settings{
+    width: 40vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  h2{
+    font-size: 20px;
+  }
+
+  h3{
+    font-size: 18px;
+  }
+
+  h4{
+    font-size: 16px;
+  }
+
+  h5{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  canvas{
+    width: 650px;
+    height: 650px;
+  }
+}
+
+@media (max-width: 900px) {
+  canvas{
+    width: 550px;
+    height: 550px;
+  }
+}
+
+$menu-height: 60px;
+
+@media (max-width: 780px) {
+  .settings{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: $menu-height;
+    max-height: $menu-height;
+    max-width: 100vw;
+    min-width: 100vw;
+    min-height: $menu-height;
+    width: 100vw;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px 20px 0 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hiddenMenu{
+    display: none;
+  }
+
+  .settings h2{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .openMenu{
+    display: block;
   }
 }

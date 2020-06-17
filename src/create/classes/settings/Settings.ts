@@ -7,6 +7,7 @@ class Settings {
     chart: Chart
     alert: boolean = false
     photo: any = ''
+    openMenu: boolean = false
 
     constructor(chart: Chart) {
         window.axesSetting = this.axesSettings
@@ -22,8 +23,19 @@ class Settings {
         window.controlPositionInput = this.controlPositionInput
         window.saveChart = this.saveChart
         window.photoLoad = this.photoLoad
+        window.openMenuHandler = this.openMenuHandler
         this.chart = chart
         this.displayAll()
+    }
+
+    openMenuHandler = () => {
+        this.openMenu = !this.openMenu
+        if (this.openMenu) {
+            document.getElementById('settingsMenu').className = 'openSettings'
+        }
+        else {
+            document.getElementById('settingsMenu').className = 'settings'
+        }
     }
 
     createExample = () => {

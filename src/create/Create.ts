@@ -67,5 +67,6 @@ declare global {
         photoLoad: any
         chartSettings: any
         saveChart: any
+        openMenuHandler: any
     }
 }

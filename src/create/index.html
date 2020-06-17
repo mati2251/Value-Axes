@@ -35,10 +35,12 @@
     <canvas id="canvas" width="1000" height="1000">
     </canvas>
 </div>
-<div class="settings">
-    <h2>
+<div class="settings" id="settingsMenu">
+    <button class="openMenu" onclick="openMenuHandler()">
+        <h2>SETTINGS MENU <img src="../resources/arrow.png" alt="open menu"></h2>
+    </button>
+    <h2 class="label">
         SETTINGS MENU
-        <img src="../resources/arrow.png" alt="open menu" class="openMenu">
     </h2>
     <div class="hiddenMenu">
         <h5>if you want to change the name of an element, double click on it</h5>

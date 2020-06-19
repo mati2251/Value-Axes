@@ -22,8 +22,6 @@ body {
   width: 25vw;
   min-height: 100vh;
   max-height: 100%;
-  background-color: #F6F6F6;
-  border-left: 2px solid #707070;
   display: flex;
   flex-direction: column;
 }
@@ -203,7 +201,6 @@ $menu-height: 60px;
 
   .settings img{
     transition: all ease 0.7s;
-    transform: rotate(180deg);
   }
 
   .label{
@@ -232,7 +229,7 @@ $menu-height: 60px;
   }
 
   .openSettings .hiddenMenu{
-    height: 600px;
+    height: 90vh;
     transition: all ease 0.7s;
   }
 
@@ -257,5 +254,18 @@ $menu-height: 60px;
     border-radius: 20px 20px 0 0;
     background-color: #F6F6F6;
     align-items: center;
+  }
+}
+
+@media (max-width: 620px){
+  canvas{
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-height: 600px) {
+  .openSettings .hiddenMenu {
+    height: 500px;
   }
 }

@@ -181,6 +181,7 @@ $menu-height: 60px;
     border-radius: 20px 20px 0 0;
     justify-content: center;
     overflow-y: hidden;
+    background-color: #F6F6F6;
     align-items: center;
   }
 
@@ -261,6 +262,15 @@ $menu-height: 60px;
   canvas{
     width: 100%;
     height: auto;
+  }
+
+  .generateMenu .menu{
+    width: 90vw;
+    height: calc(90vw + 80px);
+  }
+  .generateMenu img{
+    width: 90vw;
+    height: 90vw;
   }
 }
 
